@@ -1,0 +1,12 @@
+.container{
+    background-color: #C5EFF7;
+    width: 100%;
+    margin: 0;
+}
+
+.header{
+    color: #22313F;
+    &__title{
+        text-transform: uppercase;
+    }
+}
