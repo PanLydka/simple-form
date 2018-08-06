@@ -15,9 +15,9 @@ export class FormComponent extends React.Component {
     }
 
     handleChange(e) {
-       // this.setState({
-       //    [e.target.name]: e.target.value
-       //  });
+        this.sprops.stateApp.setState({
+           [e.target.name]: e.target.value
+         });
          
     }
 
@@ -32,7 +32,7 @@ export class FormComponent extends React.Component {
 
 
     render() {
-        console.log(this.state);
+        console.log(this.props.stateApp);
         return (
             
                <div>

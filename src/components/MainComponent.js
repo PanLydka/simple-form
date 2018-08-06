@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { FormComponent } from './FormComponent';
 
-export const MainComponent = () => {
+export const MainComponent = (props) => {
     return (
         <div>
             <div className="row center-xs header">
@@ -11,7 +11,7 @@ export const MainComponent = () => {
                 </h1>
             </div>
             <div className="row center-xs form">
-                <FormComponent />
+                <FormComponent stateApp={props.stateApp}/>
             </div>
         </div>
     )

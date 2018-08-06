@@ -14,9 +14,8 @@ export class App extends React.Component {
     
 
     render() {
-        console.log(this.state);
         return (
-            <MainComponent state={this.state}/>
+            <MainComponent stateApp={this.state}/>
         )
     }
 }
