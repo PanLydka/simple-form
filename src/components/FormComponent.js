@@ -16,7 +16,7 @@ export class FormComponent extends React.Component {
 
     handleChange(e) {
        this.setState({
-            [this.props.stateApp.e.target.name]: e.target.value
+            [this.props.stateApp[e.target.name]]: e.target.value
          });
         
          console.log(this.props.stateApp)
