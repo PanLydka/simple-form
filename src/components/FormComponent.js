@@ -15,10 +15,12 @@ export class FormComponent extends React.Component {
     }
 
     handleChange(e) {
-        this.props.stateApp.setState({
-           [e.target.name]: e.target.value
+       this.setState({
+            [this.props.stateApp.e.target.name]: e.target.value
          });
-         
+        
+         console.log(this.props.stateApp)
+  
     }
 
     handleSubmit(e){
@@ -32,7 +34,6 @@ export class FormComponent extends React.Component {
 
 
     render() {
-        console.log(this.props.stateApp);
         return (
             
                <div>
