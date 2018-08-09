@@ -15,15 +15,10 @@ export class FormComponent extends React.Component {
     }
 
     handleChange(e) {
-       this.setState({
-            [this.props.stateApp[e.target.name]]: e.target.value
-         });
-        
-         console.log(this.props.stateApp)
-  
+        this.props.handleValueChange(e.target.name, e.target.value);
     }
 
-    handleSubmit(e){
+    handleSubmit(e) {
         this.setState({
             active: this.state.active + 1
         });
@@ -35,14 +30,22 @@ export class FormComponent extends React.Component {
 
     render() {
         return (
-            
-               <div>
-                  { this.state.active <= this.state.max ? ( 
-                    <StateFormComponent state={this.state.active} onChange={this.handleChange} onSubmit={this.handleSubmit} />
-                  ) : (
-                    <h1> wait... </h1>
-                  )}
-              </div>
+            <div>
+                <div className="row center-xs header">
+                    <h1 className="col-xs-6 header__title">
+                        formularz wprowadzania danych osobowych!
+                </h1>
+                </div>
+                <div className="row center-xs form">  
+
+                    {this.state.active <= this.state.max ? (
+                        <StateFormComponent state={this.state.active} value={this.props.value} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+                    ) : (
+                            <h1> wait... </h1>
+                        )}
+                
+                </div>
+            </div>
         )
     }
 }

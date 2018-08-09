@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainComponent } from '../components/MainComponent';
+import { FormComponent } from '../components/FormComponent';
 
 export class App extends React.Component {
     constructor(props){
@@ -10,12 +10,21 @@ export class App extends React.Component {
             date: '',
             city: ''
         };
+
+        this.handleValueChange = this.handleValueChange.bind(this);
+    }
+
+    handleValueChange(name, value){
+        this.setState({
+            [name]: value
+        });
     }
     
 
     render() {
+        console.log(this.state);
         return (
-            <MainComponent stateApp={this.state}/>
+            <FormComponent handleValueChange={this.handleValueChange} value={this.state}/>
         )
     }
 }
