@@ -28,36 +28,39 @@ export class StateFormComponent extends React.Component {
 
 
     render() {
-        const active = this.props.state;
+        const index = this.props.state;
+        const active = this.state.active[index];
+
         return (
             <form onSubmit={this.props.onSubmit}>
                 <div className="row">
-                    <label className="col-xs-2" htmlFor={this.state.active[active].name1}>
-                        {this.state.active[active].displayed1}
+                    <label className="col-xs-2" htmlFor={active.name1}>
+                        {active.displayed1}
                     </label>
 
                     <input className="col-xs-10"
-                        type={this.state.active[active].type1}
-                        id={this.state.active[active].name1}
-                        name={this.state.active[active].name1}
-                        onChange={this.props.onChange}
-                    />
-
-                </div>
-                <div className="row">
-                    <label className="col-xs-2" htmlFor={this.state.active[active].name2}>
-                        {this.state.active[active].displayed2} 
-                    </label>
-                   
-                    <input className="col-xs-10"
-                        type={this.state.active[active].type2}
-                        id={this.state.active[active].name2}
-                        name={this.state.active[active].name2}
+                        type={active.type1}
+                        id={active.name1}
+                        name={active.name1}
+                        value={this.props.value[active.name1]}
                         onChange={this.props.onChange}
                     />
                 </div>
                 <div className="row">
-                    <input type="submit" value="dalej"  />
+                    <label className="col-xs-2" htmlFor={active.name2}>
+                        {active.displayed2}
+                    </label>
+
+                    <input className="col-xs-10"
+                        type={active.type2}
+                        id={active.name2}
+                        name={active.name2}
+                        value={this.props.value[active.name2]}
+                        onChange={this.props.onChange}
+                    />
+                </div>
+                <div className="row">
+                    <input type="submit" value="dalej" />
                 </div>
             </form>
         );
