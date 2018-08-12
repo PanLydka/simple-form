@@ -1,5 +1,7 @@
 import React from 'react';
 import { FormComponent } from '../components/FormComponent';
+import { ResultFormComponent } from '../components/ResultFormComponent';
+
 
 export class App extends React.Component {
     constructor(props){
@@ -7,8 +9,8 @@ export class App extends React.Component {
         this.state = {
             firstName: '',
             lastName: '',
-            date: '',
-            city: ''
+            email: '',
+            dateBirthday: '',
         };
 
         this.handleValueChange = this.handleValueChange.bind(this);
@@ -22,9 +24,11 @@ export class App extends React.Component {
     
 
     render() {
-        console.log(this.state);
         return (
-            <FormComponent handleValueChange={this.handleValueChange} value={this.state}/>
+            <div>
+              <FormComponent handleValueChange={this.handleValueChange} value={this.state}/>
+              <ResultFormComponent personalData={this.state} />
+            </div>
         )
     }
 }
