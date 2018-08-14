@@ -1,19 +1,22 @@
 import React from 'react';
 
 export const ResultFormComponent = (props) => {
+    
+    const welcomeName = (props.personalData.firstName).length > 0 ? props.personalData.firstName : "___";
+
     return (
-        <div className="row center-xs formResult">
-            <h2 className="col-xs-8 formResult__welcome">
-                witaj {props.personalData.firstName}!
-            </h2>
+        <div className="formResult">
+            <p className="text-center text-capitalize formResult__welcome text-primary">
+                Witaj {welcomeName}!
+            </p>
+
+            <div className="row formResult__heading">
+                <h2 className="col-sm-5 text-center"> Twoje dane osobowe: </h2>
+            </div>
             <div className="row">
-            <h3 className="col-xs-4"> Twoje dane osobowe: </h3>
-                <div className="col-xs-8 box">
-                    Imię i nazwiskO: {props.personalData.firstName} {props.personalData.lastName} <br/>
-                    Data Urodzenia: {props.personalData.date}  <br/>
-                    Miasto: {props.personalData.city} <br />
-                </div>
-              
+                <span className="col-sm-2 offset-sm-4">Imię i nazwisko: </span> <span className="col-sm-4"> {props.personalData.firstName} {props.personalData.lastName} </span>
+                <span className="col-sm-2 offset-sm-4">Data Urodzenia:</span> <span className="col-sm-4"> {props.personalData.dateBirthday}  </span>
+                <span className="col-sm-2 offset-sm-4">E-mail: </span> <span className="col-sm-4"> {props.personalData.email} </span>
             </div>
 
         </div>
