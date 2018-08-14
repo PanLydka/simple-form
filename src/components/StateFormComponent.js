@@ -16,12 +16,12 @@ export class StateFormComponent extends React.Component {
                     name2: "lastName"
                 },
                 2: {
-                    displayed1: "e-mail: ",
-                    displayed2: "Data Urodzenia: ",
-                    type1: "email",
-                    type2: "date",
-                    name1: "email",
-                    name2: "dateBirthday"
+                    displayed1: " Data Urodzenia: ",
+                    displayed2: "e-mail: ",
+                    type1: "date",
+                    type2: "email",
+                    name1: "dateBirthday",
+                    name2: "email"
                 }
             }
         }
@@ -62,35 +62,41 @@ export class StateFormComponent extends React.Component {
         const active = this.active;
 
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="row">
-                    <label className="col-xs-2" htmlFor={active.name1}>
+            <form onSubmit={this.handleSubmit} className="form" >
+
+                <div className="form-group row">
+                    <label className="col-sm-1 offset-sm-4 col-form-label" htmlFor={active.name1}>
                         {active.displayed1}
                     </label>
-
-                    <input className="col-xs-10"
-                        type={active.type1}
-                        id={active.name1}
-                        name={active.name1}
-                        value={this.props.value[active.name1]}
-                        onChange={this.props.onChange}
-                    />
+                    <div className="col-sm-3">
+                        <input className="form-control"
+                            type={active.type1}
+                            id={active.name1}
+                            name={active.name1}
+                            value={this.props.value[active.name1]}
+                            onChange={this.props.onChange}
+                        />
+                    </div>
                 </div>
-                <div className="row">
-                    <label className="col-xs-2" htmlFor={active.name2}>
+                <div className="form-group row">
+                    <label className="col-sm-1 offset-sm-4 col-form-label" htmlFor={active.name2}>
                         {active.displayed2}
                     </label>
 
-                    <input className="col-xs-10"
-                        type={active.type2}
-                        id={active.name2}
-                        name={active.name2}
-                        value={this.props.value[active.name2]}
-                        onChange={this.props.onChange}
-                    />
+                    <div className="col-sm-3">
+                        <input className="form-control"
+                            type={active.type2}
+                            id={active.name2}
+                            name={active.name2}
+                            value={this.props.value[active.name2]}
+                            onChange={this.props.onChange}
+                        />
+                    </div>
                 </div>
-                <div className="row">
-                    <input type="submit" value="dalej" />
+                <div className="form-group row">
+                    <div className="col-sm-10 offset-sm-4">
+                        <input className="btn btn-success" type="submit" value="dalej" />
+                    </div>
                 </div>
             </form>
         );
