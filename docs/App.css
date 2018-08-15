@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 45px; }
+  .header__title {
+    font-size: 1.4rem; }
+  .header a {
+    text-decoration: none; }
+
+.form {
+  margin-bottom: 90px; }
+
+.formResult__welcome {
+  font-size: 2.5rem; }
+
+.formResult__heading {
+  margin-top: 100px; }
