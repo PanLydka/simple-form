@@ -53,9 +53,10 @@ export class StateFormComponent extends React.Component {
 
         e.preventDefault();
 
-        if (this.validateForm())
+        if (this.validateForm()){
+            this.setState({showAlert: false});
             this.props.handleSubmit(e);
-        else
+        }else
             this.setState({ showAlert: true });
     }
 
