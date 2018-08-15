@@ -66,7 +66,7 @@ export class StateFormComponent extends React.Component {
         const active = this.active;
 
         const alert = (this.state.showAlert ?
-            <div class="alert alert-danger col-sm-4 offset-sm-4 px-2 py-2">
+            <div className="alert alert-danger col-sm-4 offset-sm-4 px-2 py-2">
                 <span> <strong>O nie!</strong> Znaleźliśmy błąd, sprawź wprowadzone dane. </span>
             </div>
             : null

@@ -29,7 +29,7 @@ export class FormComponent extends React.Component {
 
     render() {
         return (
-            <block>
+            <section>
                 <div className="row">
                 <header className="col-sm-12 header">
                         <h1 className="text-center text-uppercase header__title"> <a href="index.html" className="text-secondary">
@@ -37,7 +37,7 @@ export class FormComponent extends React.Component {
                      </h1> 
                 </header>
                 </div>
-                <block>
+                <div>
 
                     {this.state.active <= this.state.max ? (
                         <StateFormComponent state={this.state.active} value={this.props.value} onChange={this.handleChange} handleSubmit={this.handleSubmit} />
@@ -45,10 +45,10 @@ export class FormComponent extends React.Component {
                         (null)
                     }
 
-                </block>
+                </div>
 
                 
-            </block>
+            </section>
         )
     }
 }
