@@ -21,7 +21,6 @@ export class ValidateForm {
 
             const extra = method === "text" ? 'pl-PL' : undefined;
 
-
             if (!validator[this.type[method]](value,extra))
                 result = false;;
         });

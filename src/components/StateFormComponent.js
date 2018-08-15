@@ -9,18 +9,20 @@ export class StateFormComponent extends React.Component {
             active: {
                 1: {
                     displayed1: "Imie: ",
-                    displayed2: "Nazwisko: ",
                     type1: "text",
-                    type2: "text",
                     name1: "firstName",
+
+                    displayed2: "Nazwisko: ",
+                    type2: "text",
                     name2: "lastName"
                 },
                 2: {
                     displayed1: " Data Urodzenia: ",
-                    displayed2: "e-mail: ",
                     type1: "date",
-                    type2: "email",
                     name1: "dateBirthday",
+
+                    displayed2: "e-mail: ",
+                    type2: "email",
                     name2: "email"
                 }
             },
@@ -50,13 +52,12 @@ export class StateFormComponent extends React.Component {
 
 
     handleSubmit(e) {
-
         e.preventDefault();
 
-        if (this.validateForm()){
-            this.setState({showAlert: false});
+        if (this.validateForm()) {
+            this.setState({ showAlert: false });
             this.props.handleSubmit(e);
-        }else
+        } else
             this.setState({ showAlert: true });
     }
 
@@ -73,7 +74,6 @@ export class StateFormComponent extends React.Component {
         )
 
         return (
-
             <form onSubmit={this.handleSubmit} className="form">
                 {alert}
                 <div className="form-group row">
