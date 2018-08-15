@@ -14,7 +14,7 @@ export const ResultFormComponent = (props) => {
                 <h2 className="col-sm-5 text-center"> Twoje dane osobowe: </h2>
             </div>
             <div className="row">
-                <span className="col-sm-2 offset-sm-4">Imię i nazwisko: </span> <span className="col-sm-4"> {props.personalData.firstName} {props.personalData.lastName} </span>
+                <span className="col-sm-2 offset-sm-4">Imię i Nazwisko: </span> <span className="col-sm-4 text-capitalize"> {props.personalData.firstName} {props.personalData.lastName} </span>
                 <span className="col-sm-2 offset-sm-4">Data Urodzenia:</span> <span className="col-sm-4"> {props.personalData.dateBirthday}  </span>
                 <span className="col-sm-2 offset-sm-4">E-mail: </span> <span className="col-sm-4"> {props.personalData.email} </span>
             </div>
